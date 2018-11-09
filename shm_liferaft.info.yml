@@ -1,0 +1,5 @@
+name: 'SHM Liferaft'
+description: 'Provides functionality to generate PDF for liferaft entities.'
+package: SHM
+core: 8.x
+type: module

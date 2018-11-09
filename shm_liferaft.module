@@ -1,0 +1,43 @@
+<?php
+function shm_liferaft_theme($existing, $type, $theme, $path) {
+    return array(
+        'shm_checklist_pdf' => array(
+            'variables' => array(
+                'rows' => NULL,
+                'liferaft_css' => NULL,
+            ),
+            'template' => 'shm-liferaft-checklist-pdf',
+        ),
+
+        'shm_Condemnantionreport_pdf' => array(
+            'variables' => array(
+                'Condemnantionreport_rows' => NULL,
+                'condemnation_css' => NULL,
+            ),
+            'template' => 'shm-condemnation-report-pdf',
+        ),
+
+        'shm_Reinspectioncertificate_pdf' => array(
+            'variables' => array(
+                'Reinspcert_rows' => NULL,
+                'reinspcert_css' => NULL,
+            ),
+            'template' => 'shm-reinspcertificate-pdf',
+        )
+
+    );
+}
+function shm_liferaft_preprocess_page(&$variables)
+{
+
+         $variables['#attached']['library'][] = 'shm_liferaft/popup-form';
+
+}
+
+
+function shm_liferaft_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+    if ($entity_form['#entity_type'] == 'taxonomy_term' and $entity_form['#bundle'] == 'liferaft_type_capacity') {
+
+        $entity_form['name']['widget'][0]['value']['#title'] = t('Model');
+    }
+}

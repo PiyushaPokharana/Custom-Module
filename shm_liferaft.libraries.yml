@@ -1,0 +1,26 @@
+shm_liferaft:
+  version: 1.0
+  css:
+    theme:
+      lib/liferaft_pdf.css: {}
+
+shm_condemnation:
+  version: 1.0
+  css:
+    theme:
+      lib/Condemnation_Report.css: {}
+
+shm_reinpcertificate:
+  version: 1.0
+  css:
+    theme:
+      lib/Reinpcertificate.css: {}
+
+popup-form:
+  js:
+    js/popup-form.js: {}
+  dependencies:
+    - core/drupal.dialog
+    - core/drupal.ajax
+    - core/jquery.ui.dialog
+    - core/jquery.ui

@@ -1,0 +1,29 @@
+#entity.shm_liferaft.checklistpdf:
+   # path: '/download/lr-checklist/{node}'
+  #defaults:
+  #  _controller: '\Drupal\shm_liferaft\Controller\LiferaftController::ChecklistPDF'
+ # requirements:
+ #   _access: 'TRUE'
+
+entity.shm_liferaft.checklist_modal_form:
+ path: '/download/lr-checklist/{node}'
+ defaults:
+   _controller: '\Drupal\shm_liferaft\Controller\LiferaftController::ChecklistPDF'
+ requirements:
+     _permission: 'checklist modal form submissions'
+
+
+entity.shm_liferaft.CondemnationReportPDF:
+ path: '/download/condemnation-report/{job_entity}'
+ defaults:
+   _controller: '\Drupal\shm_liferaft\Controller\LiferaftController::CondemnationReportPDF'
+ requirements:
+     _permission: 'condemnation report pdf submissions'
+
+
+entity.shm_liferaft.ReinspectionCertificatePDF:
+ path: '/download/re-inspectioncertificate/{job_entity}'
+ defaults:
+   _controller: '\Drupal\shm_liferaft\Controller\LiferaftController::ReinspectionCertificatePDF'
+ requirements:
+     _permission: 'reinspection certificate pdf submissions'
